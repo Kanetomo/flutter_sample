@@ -52,21 +52,33 @@ class _MyHomePageState extends State<MyHomePage> {
           Icon(Icons.share),
         ],
       ),
-      body: Center(
-        child: RaisedButton(
-          child: Text(text),
-          onPressed: () async {
-            final result = await Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => NextPage('YAHOO!!'),
-              ),
-            );
-            setState(() {
-              text = result;
-            });
+      body: Container(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.access_alarm,
+                  size:80,
+            ),
+            Image.asset('images/Kaneyan.jpg'),
+            RaisedButton(
+              child: Text(text),
+              onPressed: () async {
+                final result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NextPage('YAHOO!!'),
+                  ),
+                );
+                setState(() {
+                  text = result;
+                });
 
-            print(result);
-          },
+                print(result);
+              },
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
