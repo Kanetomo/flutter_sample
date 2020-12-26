@@ -1,3 +1,4 @@
+import 'package:coriander_app/next_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -49,25 +50,16 @@ class _MyHomePageState extends State<MyHomePage> {
           Icon(Icons.share),
         ],
       ),
-      body: Container(
-        color: Colors.red,
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            children: <Widget>[
-              Text(
-                'Flutter',
-              ),Text(
-                'Flutter',
-              ),Text(
-                'Flutter',
-              ),
-              Text(
-                '$_counter',
+      body: Center(
+        child: RaisedButton(
+          child: Text('次へ'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NextPage()),
+            );
 
-              ),
-            ],
-          ),
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
