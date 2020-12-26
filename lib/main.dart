@@ -61,7 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
               MaterialPageRoute(builder: (context) => NextPage('YAHOO!!'),
               ),
             );
-            text = result;
+            setState(() {
+              text = result;
+            });
+
             print(result);
           },
         ),
